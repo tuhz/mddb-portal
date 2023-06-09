@@ -1,0 +1,55 @@
+{# myportal/templates/globus-portal-framework/v2/components/search-results.html #}
+<div>
+  {% for result in search.search_results %}
+  <div class="card my-3">
+    <div class="card-header">
+      <h3 class="search-title">
+        <a href="{% url 'detail' globus_portal_framework.index result.subject %}">{{result.title|default:'Result'}}</a>
+      </h3>
+    </div>
+    <div class="card-body">
+      <table class="table table-sm borderless">
+        <tbody>
+          {% for item in result.search_results %}
+          <tr>
+            <th style="width:30%"">{{item.title}}</th>
+            <td>
+              {% if item.title == "Reference" %}
+                <!-- {% for r in item.value %}
+                  <a href="https://doi.org/{{r}}">{{r}}</a><br>
+                {% endfor %} -->
+                {% for ref_item in item.value %}
+                <!-- {{ref_item}} -->
+                <a href="https://doi.org/{{ref_item.DOI}}">{{ref_item.title}}</a><br>
+                {{ref_item.author}}<br>
+                <i>{{ref_item.journal}}</i>, {{ref_item.date}}<br>
+                {{ref_item.DOI}}<br><br>
+
+                {% endfor %}
+              {% else %}
+                {{item.value}}
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        <!-- <tr>
+          {{search_results}}
+          {% for item in result.search_results %}
+          <th>{{item.title}}</th>
+          {% endfor %}
+        </tr>
+        <tr>
+          {% for item in result.search_results %}
+          {% if item.type == "date" %}
+          <th>{{item.value | date:"DATETIME_FORMAT"}}</th>
+          {% else %}
+          <th>{{item.value}}</th>
+          {% endif %}
+          {% endfor %}
+        </tr> -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endfor %}
+</div>
