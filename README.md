@@ -1,4 +1,4 @@
-# gmca-portal
+# MDDB-portal
 An ACDC portal for the Materials Descriptor Database (MDDB) project
 
 This is a basic starter portal for visualizing datasets published into the GMCA search index.
