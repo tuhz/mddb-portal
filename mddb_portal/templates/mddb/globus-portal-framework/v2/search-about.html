@@ -16,20 +16,26 @@
     <div>
       {% block landing_page_about %}
       
-      <h2>GM/CA @ APS</h2>
+      <h2>Material Descriptor Database (MDDB)</h2>
 
-      <p>
-        The General Medical Sciences and Cancer Institutes Structural Biology Facility at
-        the Advanced Photon Source (GM/CA @ APS) is a part of the X-ray Science Divison
-        at APS, Argonne National Laboratory (ANL).
-
-        The GM/CA @ APS project has been established by the National Institutes of Health's
-        (NIH) National Institute of General Medical Sciences (NIGMS) and National Cancer
-        Institute (NCI) to build and operate a national user facility for crystallographic
-        structure determination of biological macromolecules by X-ray diffraction.
+      <p class="lead font-weight-bolder">
+        MDDB provides information on symmetry/phase labels (SPL), 
+        sample descriptors (DSC), material properties (PRO), 
+        material applications (APL), synthesis methods (SMT), 
+        and characterization methods (CMT) for inorganic materials. 
+        The data are automatically extracted from the over 10 million English language 
+        materials-related publications with ScholarBERT, a large language model for science, 
+        fine-tuned on the Solid State Materials dataset.
       </p>
 
-      <img src="https://g-7581c.fd635.8443.data.globus.org/portal/public/APS_aerial.jpeg" width="50%">
+      <p class="lead font-weight-bolder">
+        If you use the data, please cite the following article:
+      </p>
+      <p>
+        Hong, Zhi, Aswathy Ajith, Gregory Pauloski, Eamon Duede, Kyle Chard, and Ian Foster. "The Diminishing Returns of Masked Language Models to Science." <em>arXiv preprint arXiv:2205.11342</em> (2023).
+      </p>
+
+      <!-- <img src="https://g-7581c.fd635.8443.data.globus.org/portal/public/APS_aerial.jpeg" width="50%"> -->
       
       {% endblock %}
     </div>
